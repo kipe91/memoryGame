@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Kim Pettersson">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/playModul.css">
+  <link rel="stylesheet" href="css/gameModul.css">
+  <link rel="stylesheet" href="css/finnishModul.css">
+  <!-- Font Awesome Icons - Stars -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="backgroundImg">
+<section class="playModul">
+  <header class="playModul-Header">
+    <img class="playModul-ImgTop" src="images/frozen/modulTop.png">
+  </header>
+  <main class="playModul-Main">
+    <h1 class="playModul-h1">Frozen</h1>
+    <input type="button" class="playBtn" id="playBtn" value="PLAY">
+    <div class="gameDifficult" id="gameDifficult">
+      <input type="button" value="<" id="goDown">
+      <p id="difficult">Normal</p>
+      <input type="button" value=">" id="goUp">
+    </div>
+    <label for="gameMode"><span class="bold">Game Style:</span>
+      <select id="gameMode">
+        <option value="frozen">Frozen</option>
+        <option value="disney">Disney</option>
+        <option value="lego">Lego</option>
+        <option value="pokemon">Pokemon</option>
+      </select>
+    </label>
+  </main>
+</section>
+
+<section class="gameModul">
+  <header class="gameModul-Header">
+    <div class="gameMargin" id="starHolder">
+      <span id="star1" class="fa fa-star checked"></span>
+      <span id="star2" class="fa fa-star checked"></span>
+      <span id="star3" class="fa fa-star checked"></span>
+    </div>
+    <span class="gameMargin" id="countTime">00:00:0</span>
+    <p class="gameMargin">Moves: <span id="nrClicks">0</span></p>
+    <img class="gameBtn gameFloatRight" id="rePlayBtn" src="images/replayBtn.png" alt="rePlayButton">
+    <img class="gameBtn gameFloatRight" id="goBackBtn" src="images/gobackBtn.png" alt="goBackButton">
+  </header>
+
+  <main class="gameModul-Main"></main>
+</section>
+
+<section class="finnishModul">
+  <h1>Nice, you did it!</h1>
+  <p class="score" id="finnishStars"></p>
+  <span>Your Time: </span><br>
+  <p class="score" id="finnishTime">00:00:0</p>
+  <span>Your moves: </span><br>
+  <p class="score" id="finnishClicks">12</p>
+  <input type="button" class="finnishBtn" id="playAgain" value="Play again?">
+  <input type="button" class="finnishBtn" id="closeGame" value="Close game">
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/difficult.js"></script>
+<script src="js/gameMode.js"></script>
+<script src="js/memory.js"></script>
+
+</body>
+</html>

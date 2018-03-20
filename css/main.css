@@ -1,0 +1,47 @@
+/* __________ MainCSS and Media __________ */
+@font-face {
+    font-family: disney;
+    src: url(../fonts/disney.ttf);
+}
+
+@font-face {
+    font-family: frozen;
+    src: url(../fonts/frozen.ttf);
+}
+
+@font-face {
+    font-family: lego;
+    src: url(../fonts/lego.otf);
+}
+
+@font-face {
+    font-family: pokemon;
+    src: url(../fonts/pokemon.otf);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.backgroundImg {
+	background: url(../images/background.jpg);
+	height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 800px) {
+    .gameModul {
+        width: 100%;
+    }
+    .gameMargin {
+        font-size: 20px;
+        margin: 0 5px 0 5px;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .backgroundImg {
+        background: none;
+    }
+}
