@@ -30,6 +30,12 @@
     background-size: cover;
 }
 
+@media screen and (max-width: 1260px) {
+    .backgroundImg {
+        background: none;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .gameModul {
         width: 100%;
@@ -40,8 +46,16 @@
     }
 }
 
-@media screen and (max-width: 1260px) {
-    .backgroundImg {
-        background: none;
+@media screen and (max-width: 500px) {
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card {
+        width: 70px;
+        height: 70px;
     }
 }

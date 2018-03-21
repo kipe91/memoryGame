@@ -43,6 +43,7 @@
 /* - Middle/Game part - */
 .gameModul-Main {
 	display: flex;
+	width: 100%;
 	flex-wrap: wrap;
 	justify-content: center;
 	perspective: 800px;
