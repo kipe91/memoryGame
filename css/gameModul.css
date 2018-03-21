@@ -55,11 +55,8 @@
 	width: 100px;
 	height: 100px;
 	position: relative;
-	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	-webkit-transition: transform 1s;
 	transition: transform 1s;
-	-webkit-transform-origin: center;
 	transform-origin: center;
 	margin: 10px;
 }
@@ -75,7 +72,6 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	text-align: center;
 	border-radius: 10px;
@@ -92,7 +88,6 @@
 .card .back {
 	/* Hidden side */
 	background-color: lightblue;
-	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 	box-shadow: inset 0 0 10px #000, 5px 5px 8px grey;
 	border-radius: 25px;
@@ -107,7 +102,6 @@
 
 /* - Animations - */
 .flipped {
-	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
 
