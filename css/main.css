@@ -30,6 +30,15 @@
     background-size: cover;
 }
 
+/* - Star coloring - */
+.fa-star {
+    color: lightBlue;
+}
+.checked {
+    color: orange;
+}
+
+/* - Phone size adjustments - */
 @media screen and (max-width: 1260px) {
     .backgroundImg {
         background: none;

@@ -1,9 +1,11 @@
+// Game controller. Where things happen!
 $(function(){
 const play = $("#playBtn");
 const playModul = $(".playModul");
 const gameModul = $(".gameModul");
 
 	play.click(function startMemory(event) {
+		// Then play button is being clicked - do this..
 		event.preventDefault();
 		const mode = $("#gameMode").val();
 		const difficult = $("#difficult").text();
@@ -15,6 +17,7 @@ const gameModul = $(".gameModul");
 });
 
 const memoryStats = {
+	// Keep track on game setup and stuff
 	clicks: 0,
 	time: "",
 	clock: setInterval(gameTime, 100),
@@ -25,6 +28,7 @@ const memoryStats = {
 };
 
 const timeWatch = {
+	// Variables for function gameTime
 	minHigh: 0,
 	minLow: 0,
 	secHigh: 0,
@@ -58,6 +62,7 @@ function gameLayout(mode, difficult) {
 
 	cleanLayout();
 
+	// Card decks: 
 	const frozenCards = [
 	"card_1", "card_2", "card_3", "card_4", "card_5", "card_6", "card_7", "card_8"
 	];
@@ -73,6 +78,7 @@ function gameLayout(mode, difficult) {
 	"pidgey", "pikachu", "rattata", "squirtle", "togepi"
 	];
 
+	// Picking out right deck after user game mode choose
 	if (memoryStats.mode === "frozen") {
 		pickOutCards = frozenCards;
 	}
@@ -86,6 +92,7 @@ function gameLayout(mode, difficult) {
 		pickOutCards = pokemonCards;
 	}
 
+	// Set number of cards depenting on difficult
 	if (memoryStats.difficult === "Easy") {
 		memoryStats.cards = 3;
 	}
@@ -110,11 +117,10 @@ function gameLayout(mode, difficult) {
 	gameCards = gameCards.concat(gameCards);
 	console.log(gameCards);
 
-	const cardHolder = $(document.createDocumentFragment());
 	// Create grid using for loop.
+	const cardHolder = $(document.createDocumentFragment());
 		for (let k = 1; k <= (memoryStats.cards * 2); k++) {
-			// Pick random card.
-			let rand = gameCards[Math.floor(Math.random() * gameCards.length)];
+			let rand = gameCards[Math.floor(Math.random() * gameCards.length)]; // Pick random card/picture.
 			// Create that card.
 			let cardImg = "<img src=\"images/" + memoryStats.mode + "/" + rand + ".png\" alt=\"" + rand + "\">";
 			let frontImg = "<img src=\"images/" + memoryStats.mode + "/cardBg.png\" alt=\"Card BG picture\">";
@@ -124,6 +130,7 @@ function gameLayout(mode, difficult) {
 			let index = gameCards.indexOf(rand);
 			gameCards.splice(index, 1);
 		}
+	// Output cards on page.
 	$(".gameModul-Main").append(cardHolder);
 
 	// Card flipper listner
@@ -132,11 +139,13 @@ function gameLayout(mode, difficult) {
 		cardController(event);
 	});
 
+	// Replay button
 	$("#rePlayBtn").click(function(event){
 		event.preventDefault();
 		gameLayout(memoryStats.mode, memoryStats.difficult);
 	});
 
+	// Go back to play setup
 	$("#goBackBtn").click(function(event){
 		event.preventDefault();
 		$(".gameModul").fadeOut();
@@ -168,11 +177,13 @@ function cardController(clickedCard) {
 				cardsToCheck = $(".marked"); //update it.
 				const card1 = cardsToCheck.slice(0, 1);
 				const card2 = cardsToCheck.slice(1, 2);
+				// If correct:
 				if (card1.find(".back").find("img").attr("alt") === card2.find(".back").find("img").attr("alt")) {
 					cardsToCheck.addClass("cardCorrect");
 					cardsToCheck.removeClass("marked");
 					console.log("Card match");
 				}
+				// If wrong:
 				else {
 					cardsToCheck.addClass("cardWrong");
 					setTimeout(function(){
@@ -182,8 +193,7 @@ function cardController(clickedCard) {
 						console.log("Card wrong");
 					}, 1500);
 				}
-				// start function to se if all cards are done.
-				isAllDone();
+				isAllDone(); // start function to se if all cards are done.
 			}, 2000);
 		}
 		else {
@@ -251,7 +261,7 @@ function starsAndClick() {
 	}
 }
 
-// Start Time "00:00:0"
+// Time counter "00:00:0"
 	function gameTime() {
 		timeWatch.msec++;
 
@@ -282,6 +292,7 @@ function showScore() {
 	$(".gameModul").fadeOut("slow");
 	$(".finnishModul").fadeIn();
 
+	// Show nr of stars depending on performance
 	$("#finnishStars").children().remove();
 	const stars = $(document.createDocumentFragment());
 	for (let i = 1; i <= 3; i++) {
@@ -294,10 +305,13 @@ function showScore() {
 			stars.append(star);
 		}
 	}
+
+	// Add score to page
 	$("#finnishStars").append(stars);
 	$("#finnishTime").text(memoryStats.time);
 	$("#finnishClicks").text(memoryStats.clicks);
 
+	// play again button
 	$("#playAgain").click(function(event){
 		event.preventDefault();
 		$(".finnishModul").fadeOut();
@@ -305,6 +319,7 @@ function showScore() {
 		$(".gameModul").fadeIn();
 	});
 
+	// go back to play menu
 	$("#closeGame").click(function(event){
 		event.preventDefault();
 		$(".finnishModul").fadeOut();

@@ -51,6 +51,7 @@
 
 /* - Card styles - */
 .card {
+	/* One card */
 	width: 100px;
 	height: 100px;
 	position: relative;
@@ -68,6 +69,7 @@
 }
 
 .card figure {
+	/* Both sides */
 	margin: 0;
 	display: block;
 	position: absolute;
@@ -81,12 +83,14 @@
 }
 
 .card .front {
+	/* Shown side */
 	background-color: yellow;
 	box-shadow: 5px 5px 8px grey;
 	border-radius: 25px;
 }
 
 .card .back {
+	/* Hidden side */
 	background-color: lightblue;
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
@@ -150,12 +154,4 @@
     0% {border-color: blue;}
     25% {border-color: lightgreen; background-color: lightgreen;}
     100% {border-color: yellow; background-color: lightblue}
-}
-
-/* - Star coloring - */
-.fa-star {
-	color: lightBlue;
-}
-.checked {
-    color: orange;
 }

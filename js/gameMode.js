@@ -1,4 +1,4 @@
-//Difficult selecter
+//gameMode selecter
 $(function(){
 
 const target = $("#gameMode");
