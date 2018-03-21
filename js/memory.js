@@ -3,7 +3,7 @@ const play = $("#playBtn");
 const playModul = $(".playModul");
 const gameModul = $(".gameModul");
 
-	play.click(function startMemory() {
+	play.click(function startMemory(event) {
 		event.preventDefault();
 		const mode = $("#gameMode").val();
 		const difficult = $("#difficult").text();
@@ -132,12 +132,12 @@ function gameLayout(mode, difficult) {
 		cardController(event);
 	});
 
-	$("#rePlayBtn").click(function(){
+	$("#rePlayBtn").click(function(event){
 		event.preventDefault();
 		gameLayout(memoryStats.mode, memoryStats.difficult);
 	});
 
-	$("#goBackBtn").click(function(){
+	$("#goBackBtn").click(function(event){
 		event.preventDefault();
 		$(".gameModul").fadeOut();
 		$(".playModul").fadeIn();
@@ -298,14 +298,14 @@ function showScore() {
 	$("#finnishTime").text(memoryStats.time);
 	$("#finnishClicks").text(memoryStats.clicks);
 
-	$("#playAgain").click(function(){
+	$("#playAgain").click(function(event){
 		event.preventDefault();
 		$(".finnishModul").fadeOut();
 		gameLayout(memoryStats.mode, memoryStats.difficult);
 		$(".gameModul").fadeIn();
 	});
 
-	$("#closeGame").click(function(){
+	$("#closeGame").click(function(event){
 		event.preventDefault();
 		$(".finnishModul").fadeOut();
 		$(".playModul").fadeIn();
