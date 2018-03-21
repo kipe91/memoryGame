@@ -1,13 +1,16 @@
 # Memory Game
 
 My own javascript game with desktop and phone support. <br>
-Should be easy to add your own content if wanted as long as you have some JS knowledge. Using some Jquery so you have that in mind.
+Should be easy to add your own content if wanted as long as you have some JS knowledge. <br>
+Using some Jquery so you have that in mind.
 
-### Browser support (latest version):
+### Browser support:
 - Chrome
 - Firefox
 - Microsoft Edge
-- Internet Explorer
+- Opera
+- (Safari? Im working on windows so cant test..)
+- (Internet Explorer, not yet but working on it)
 
 ### Have 3 difficults (number of cards):
 - Easy
