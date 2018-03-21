@@ -217,6 +217,7 @@ function isAllDone() {
 function starsAndClick() {
 	memoryStats.clicks++;
 	$("#nrClicks").text(memoryStats.clicks);
+	// Easy
 	if (memoryStats.difficult === "Easy") {
 		if (memoryStats.clicks === 7) {
 			memoryStats.stars--;
@@ -231,30 +232,32 @@ function starsAndClick() {
 			$("#star1").removeClass("checked");
 		}
 	}
+	// Normal
 	else if (memoryStats.difficult === "Normal") {
-		if (memoryStats.clicks === 13) {
+		if (memoryStats.clicks === 15) {
 			memoryStats.stars--;
 			$("#star3").removeClass("checked");
 		}
-		else if (memoryStats.clicks === 17) {
+		else if (memoryStats.clicks === 21) {
 			memoryStats.stars--;
 			$("#star2").removeClass("checked");
 		}
-		else if (memoryStats.clicks === 21) {
+		else if (memoryStats.clicks === 27) {
 			memoryStats.stars--;
 			$("#star1").removeClass("checked");
 		}
 	}
+	// Hard
 	else if (memoryStats.difficult === "Hard") {
-		if (memoryStats.clicks === 17) {
+		if (memoryStats.clicks === 23) {
 			memoryStats.stars--;
 			$("#star3").removeClass("checked");
 		}
-		else if (memoryStats.clicks === 23) {
+		else if (memoryStats.clicks === 27) {
 			memoryStats.stars--;
 			$("#star2").removeClass("checked");
 		}
-		else if (memoryStats.clicks === 31) {
+		else if (memoryStats.clicks === 37) {
 			memoryStats.stars--;
 			$("#star1").removeClass("checked");
 		}
