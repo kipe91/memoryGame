@@ -49,7 +49,6 @@ function cleanLayout() {
 	timeWatch.secLow = 0;
 	timeWatch.msec = 0;
 
-	$("#star1").addClass("checked");
 	$("#star2").addClass("checked");
 	$("#star3").addClass("checked");
 	memoryStats.stars = 3;
@@ -227,10 +226,6 @@ function starsAndClick() {
 			memoryStats.stars--;
 			$("#star2").removeClass("checked");
 		}
-		else if (memoryStats.clicks === 15) {
-			memoryStats.stars--;
-			$("#star1").removeClass("checked");
-		}
 	}
 	// Normal
 	else if (memoryStats.difficult === "Normal") {
@@ -242,10 +237,6 @@ function starsAndClick() {
 			memoryStats.stars--;
 			$("#star2").removeClass("checked");
 		}
-		else if (memoryStats.clicks === 27) {
-			memoryStats.stars--;
-			$("#star1").removeClass("checked");
-		}
 	}
 	// Hard
 	else if (memoryStats.difficult === "Hard") {
@@ -256,10 +247,6 @@ function starsAndClick() {
 		else if (memoryStats.clicks === 27) {
 			memoryStats.stars--;
 			$("#star2").removeClass("checked");
-		}
-		else if (memoryStats.clicks === 37) {
-			memoryStats.stars--;
-			$("#star1").removeClass("checked");
 		}
 	}
 }
