@@ -1,9 +1,9 @@
 # Memory Game
 
 My own javascript game with desktop and phone support. <br>
-Should be easy to add your own content if wanted as long as you have some JS knowledge. <br>
-Using some Jquery so you have that in mind. <br>
-Row number in examples below can be wrong if you add your own code.
+Your goal is to match a card to its right sibling. When all cards are turned up and correct you win. If you turn up two cards and they dont match they will turn back and you have to remember what it was for your next move. <br><br>
+Should be easy to add your own content if wanted as long as you have some JS knowledge. Using some Jquery in code. <br>
+For more info about modifying check the file "modifyGame.md". <br>
 
 ![Memory print image](images/gamePrint.png)
 
@@ -33,6 +33,7 @@ Row number in examples below can be wrong if you add your own code.
 ## Play guide:
 
 1. Select difficult (Easy - Normal - Hard).
+> Number of cards.
 
 2. Select "game style" / what deck you want to use.
 > You choose from 4 different, for example Frozen.
