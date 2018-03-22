@@ -15,65 +15,29 @@ Row number in examples below can be wrong if you add your own code.
 - (Safari? Im working on windows so cant test..)
 - (Internet Explorer, not yet but working on it)
 
-### Have 3 difficults (number of cards):
-- Easy
-- Normal
-- Hard
+## Start guide:
 
-### You can play with 4 different card decks:
-- Frozen
-- Disney
-- Lego
-- Pokemon
+### For local play:
+1. Download game by pressing "clone and download".
 
-## How to add your own deck: 
-You can replace one of the four the already exist or just add a new by following this guide.
-**Note**, you need at least 8 cards/pictures to play hard difficult and the pictures have to be .png files.
+2. Open up "index.html" and no need to modify anything.
 
-1. Start by finding the pictures you want and put them in a new folder (with your decks name) in the "images" folder.
+### For implement on your site:
+1. Download zip or clone.
 
-2. Rename the picture you want as main image for your deck (all cards one side) to "cardBg.png".
+2. Option 1, Iframe the "index.html" file on your site.
 
-2. Then open the index.html file (row 34).. add an option to choose your new cards: <br>
-```
-<option value="yourDecksName">yourDecksName</option>
-```
-
-3. After that, open up "gameMode.js" and add your gameMode/deck: (this is not necessary for the game to work with your cards but it lets you customise the startmeny to your own and are recommended) <br>
-```
-else if (gameMode === "yourDecksName") {
-	$(".playModul-h1").text("yourDecksName");
-	$(".playModul-h1").css("font-family", "yourWantedFontStyle");
-	$(".playModul-ImgTop").attr("src", "images/yourDecksName/yourPlaymenuImage.png");
-}
-```
-> If you download your own font you can add it to "main.css" file, there you can see how I structured my fonts.
-
-4. Time for the "memory.js" file (row 65+).. add your deck/cards. The card name should be the same as the picture name. <br>
-```
-const yourDecksName = [
-	"pictureName1", "pictureName2", "pictureName3"
-];
-```
-> Note: any order is ok but leave the .png out.
-
-Then below that in same file (memory.js), you can add: 
-```
-else if (memoryStats.mode === "yourDecksName") {
-	pickOutCards = yourDecksName;
-}
-```
-
-And thats it! Enjoy your new cards.
+2. Option 2, Open "index.html" in your code editor and take everything inside the "body" tags and but it inside a "div" tag on your site. Then make sure to inluce all css/stylesheets.
 
 
-## Short guide on changing difficult:
-Open up "memory.js" file and go to line 95. <br>
-All you need to do is change the number (3) to what number of pairs/picture you want the game to pick on each difficult. <br>
-```
-memoryStats.cards = 3;
-```
-> Note: 3 pairs/pictures gives 6 cards.. and so on.. 
+## Play guide:
+
+1. Select difficult (Easy - Normal - Hard).
+
+2. Select "game style" / what deck you want to use.
+> You choose from 4 different, for example Frozen.
+
+3. Then just press "Play" and enjoy!
 
 ## License: 
 Free for private use. For other idées please contact me first and talk about it.
