@@ -43,15 +43,19 @@
 <!-- Game Modal -->
 <section class="gameModul">
   <header class="gameModul-Header">
-    <div class="gameMargin" id="starHolder">
-      <span id="star1" class="fa fa-star checked"></span>
-      <span id="star2" class="fa fa-star checked"></span>
-      <span id="star3" class="fa fa-star checked"></span>
+    <div class="gameModul-Header-Part1">
+      <div class="gameMargin" id="starHolder">
+        <span id="star1" class="fa fa-star checked"></span>
+        <span id="star2" class="fa fa-star checked"></span>
+        <span id="star3" class="fa fa-star checked"></span>
+      </div>
+      <span class="gameMargin" id="countTime">00:00:0</span>
+      <p class="gameMargin">Moves: <span id="nrClicks">0</span></p>
     </div>
-    <span class="gameMargin" id="countTime">00:00:0</span>
-    <p class="gameMargin">Moves: <span id="nrClicks">0</span></p>
-    <img class="gameBtn gameFloatRight" id="rePlayBtn" src="images/replayBtn.png" alt="rePlayButton">
-    <img class="gameBtn gameFloatRight" id="goBackBtn" src="images/gobackBtn.png" alt="goBackButton">
+    <div class="gameModul-Header-Part2">
+      <img class="gameBtn" id="rePlayBtn" src="images/replayBtn.png" alt="rePlayButton">
+      <img class="gameBtn" id="goBackBtn" src="images/gobackBtn.png" alt="goBackButton">
+    </div>
   </header>
   <div class="gameModul-Main"></div>
 </section>

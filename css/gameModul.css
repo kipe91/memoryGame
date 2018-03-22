@@ -16,28 +16,36 @@
 	border-radius: 5px;
 }
 
+.gameModul-Header-Part1 {
+	float: left;
+	height: 40px;
+	width: 70%;
+	margin: 0;
+	padding-top: 5px;
+}
+
+.gameModul-Header-Part2 {
+	float: left;
+	height: 40px;
+	width: 30%;
+	margin: 0;
+}
+
 .gameMargin {
 	margin: 0 10px 0 10px;
 	display: inline-block;
-	padding-top: 5px;
 	font-size: 22px;
 	color: #333756;
-}
-
-.gameFloatRight {
-	float: right;
-	margin-left: 5px;
-}
-
-.gameFloatRight:hover {
-	float: right;
-	margin-left: 5px;
-	cursor: pointer;
 }
 
 .gameBtn {
 	height: 100%;
 	width: auto;
+	margin-left: 5px;
+}
+
+.gameBtn:hover {
+	cursor: pointer;
 }
 
 /* - Middle/Game part - */
@@ -47,6 +55,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	perspective: 800px;
+	margin-top: 20px;
 }
 
 /* - Card styles - */
@@ -148,4 +157,34 @@
     0% {border-color: blue;}
     25% {border-color: lightgreen; background-color: lightgreen;}
     100% {border-color: yellow; background-color: lightblue}
+}
+
+/* - Phone size adjustments - */
+@media screen and (max-width: 800px) {
+    .gameModul {
+        width: 100%;
+    }
+    .gameModul-Header {
+        height: 100px;
+    }
+    .gameModul-Header-Part1 {
+        width: 100%;
+    }
+    .gameModul-Header-Part2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card {
+        width: 70px;
+        height: 70px;
+    }
 }
